@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Student Registration Form
+{% endblock %}
+
+{% block change %}
+
+    <form method="POST">
+        <h4> {{string}} </h4>
+
+        {% csrf_token %}
+
+        {{ form.as_p }} <br>
+
+        <input type="Submit", value="Registration">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Student List
+{% endblock %}
+
+{% block change %}
+
+    {% for i in data%}
+
+        Name : {{i.name}} <br>
+        Email : {{i.email}} <br>
+        ID : {{i.ids}} <br><br>
+
+    {% endfor %}
+    
+{% endblock %}
