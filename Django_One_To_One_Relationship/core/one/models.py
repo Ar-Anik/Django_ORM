@@ -12,11 +12,9 @@ class Bangladeshi(models.Model):
         return self.Nid
 
 class Student(models.Model):
-    person = models.OneToOneField("Bangladeshi", on_delete=models.CASCADE)
+    person = models.OneToOneField(Bangladeshi, on_delete=models.CASCADE)
     school_name = models.CharField(max_length=100)
     std_id = models.IntegerField()
 
     def __str__(self):
         return str(self.std_id)
-
-
