@@ -15,14 +15,23 @@
     
     <body>
         
-	{% for i in data %}
+        {% for student in data %}
 
-		{{ i.std_name }} <br>
-		{{ i.std_id }} <br>
-		{{ i.std_email }} <br>
+            Name : {{student.std_name}} <br>
+            ID : {{student.std_id}} <br>
+            Email : {{student.std_email}} <br>
 
-		<br>
-	{% endfor %}
+            <p> Courses :
+                
+                <ul>
+                    {% for course in student.course.all %}
+                        <li> {{course.course_name}} </li>
+                    {% endfor %}
+                </ul>
+
+            </p>
+
+        {% endfor %}
 
         <script src="" async defer></script>
     </body>
