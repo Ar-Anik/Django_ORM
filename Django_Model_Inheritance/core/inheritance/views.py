@@ -1,31 +1,66 @@
-from django.shortcuts import render
-from .models import Student, Teacher
 from django.db import connection
-from django.db.models import Q
+from django.shortcuts import render
+from .models import Books, ISBN, Student, Teacher, OfficeInfo
 
 # Create your views here.
 
-def student_list(request):
-    posts = Student.objects.all()
-    
-    print(posts)
+def Std_List(request):
+    data = Student.objects.all()
+
+    print(data)
     print(connection.queries)
 
     context = {
-        'data': posts,
+        'data' : data,
     }
 
     return render(request, 'output.html', context)
 
-def teacher_list(request):
-    posts = Teacher.objects.all()
+def Thr_List(request):
+    data = Teacher.objects.all()
 
-    print(posts)
+    print(data)
     print(connection.queries)
 
     context = {
-        'data': posts,
+        'data':data,
     }
 
     return render(request, 'output.html', context)
 
+def Employer_List(request):
+    data = OfficeInfo.objects.all()
+
+    print(data)
+    print(connection.queries)
+
+    context = {
+        'data': data,
+    }
+
+    return render(request, 'output.html', context)
+
+
+def Book_List(request):
+    data = Books.objects.all()
+
+    print(data)
+    print(connection.queries)
+
+    context = {
+        'data':data,
+    }
+
+    return render(request, 'output.html', context)
+
+def Book_ISBN(request):
+    data = ISBN.objects.all()
+
+    print(data)
+    print(connection.queries)
+
+    context = {
+        'data' : data,
+    }
+
+    return render(request, 'output.html', context)
